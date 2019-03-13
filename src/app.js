@@ -6,8 +6,8 @@ const morgan = require('morgan')
 
 const app = express()
 
-app.use(morgan('combine'))
-app.use(bodyParser.json)
+app.use(morgan('combined'))
+app.use(bodyParser.json())
 app.use(cors())
 
 /*
@@ -17,7 +17,7 @@ put
 patch
 delete
 */
-app.get('status', (req, res) => {
+app.get('/status', (req, res) => {
     res.send({
         message:"It worked"
     })
